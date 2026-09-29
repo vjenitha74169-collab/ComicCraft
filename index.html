@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ComicCraft</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>ComicCraft</h1>
+  <p class="sub">Turn a story prompt into a personalized comic strip.</p>
+
+  <div class="card" id="formCard">
+    <label>Story Prompt</label>
+    <textarea id="prompt" placeholder="A brave fox exploring an enchanted forest...">A curious astronaut discovers a glowing door on an abandoned space station.</textarea>
+    <div class="row">
+      <div><label>Main Character Name</label><input id="character" value="Nova"></div>
+      <div><label>Setting</label>
+        <select id="setting"><option>forest</option><option selected>space</option><option>school</option><option>city</option></select>
+      </div>
+    </div>
+    <div class="row">
+      <div><label>Story Tone</label>
+        <select id="tone"><option>dramatic</option><option>funny</option><option selected>poetic</option><option>light-hearted</option></select>
+      </div>
+      <div><label>Art Style</label>
+        <select id="artstyle"><option selected>anime</option><option>pixel art</option><option>comic book</option><option>realistic</option></select>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="genBtn" onclick="generateComic()">Generate Comic</button>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div id="preview" class="hidden"></div>
+
+  <div id="successCard" class="card success hidden">
+    <h2>Comic exported!</h2>
+    <p class="sub">Your AI-powered comic has been saved as a PDF.</p>
+    <button class="secondary" onclick="reset()">Go Create Another Comic</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
